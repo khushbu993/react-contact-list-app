@@ -5,10 +5,10 @@ import ContactCard from './ContactCard';
 
 function App() {
   const url = 'https://randomuser.me/api/';
-  const {isLoading, data, error} = useFetch(url+'?results=200');
+  const {data} = useFetch(url+'?results=200');
   const [contactList, setContactlist] = useState(null);
   const [filterQuery, setFilterQuery] = useState(null);
-
+  
   useEffect(() => {
     if (filterQuery) {
       const queryString = filterQuery.toLowerCase();
